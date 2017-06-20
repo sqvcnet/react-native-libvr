@@ -1,0 +1,23 @@
+{
+  "name": "react-native-libvr",
+  "version": "1.0.0",
+  "description": "react native interface for libvr",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sqvcnet/react-native-libvr.git"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "libvr"
+  ],
+  "author": "Qiang Shan",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sqvcnet/react-native-libvr/issues"
+  },
+  "homepage": "https://github.com/sqvcnet/react-native-libvr#readme"
+}

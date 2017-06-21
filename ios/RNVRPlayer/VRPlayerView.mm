@@ -11,7 +11,10 @@
 #include "Player.hpp"
 #import <VideoToolbox/VideoToolbox.h>
 
-@implementation PlayerView {
+#import <React/RCTEventDispatcher.h>
+#import <React/UIView+React.h>
+
+@implementation VRPlayerView {
     geeek::Player *_player;
     Renderer *_renderer;
     RCTBridge *_bridge;
@@ -250,37 +253,15 @@
     width = 1.0 * frame.size.width * wScale;
     height = 1.0 * frame.size.height * hScale;
     
-    
     _renderer->init(width, height);
     
     [super reactSetFrame: frame];
 }
 
-- (void)cardboardView:(GVRCardboardView *)cardboardView
-     willStartDrawing:(GVRHeadTransform *)headTransform {
-
-}
-
-- (void)cardboardView:(GVRCardboardView *)cardboardView
-     prepareDrawFrame:(GVRHeadTransform *)headTransform {
-
-}
-
-- (void)cardboardView:(GVRCardboardView *)cardboardView
-              drawEye:(GVREye)eye
-    withHeadTransform:(GVRHeadTransform *)headTransform {
-
-    GLKMatrix4 head_from_start_matrix = [headTransform headPoseInStartSpace];
-    _renderer->render(head_from_start_matrix.m);
-}
-
-- (void)cardboardView:(GVRCardboardView *)cardboardView
-         didFireEvent:(GVRUserEvent)event {
-
-}
-
-- (void)cardboardView:(GVRCardboardView *)cardboardView shouldPauseDrawing:(BOOL)pause {
-
+- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
+{
+//    GLKMatrix4 head_from_start_matrix = [headTransform headPoseInStartSpace];
+//    _renderer->render(head_from_start_matrix.m);
 }
 
 @end

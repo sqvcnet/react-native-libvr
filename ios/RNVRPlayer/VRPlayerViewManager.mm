@@ -9,7 +9,7 @@
 #import "VRPlayerViewManager.h"
 #import "VRPlayerView.h"
 
-#import <Views/RCTUIManager.h>
+#import <React/RCTUIManager.h>
 
 @implementation VRPlayerViewManager {
 }

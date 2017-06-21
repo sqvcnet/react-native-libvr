@@ -5,11 +5,13 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "7B8D85F13EDBE5BFDA885F7E1DFF3B9B20D004F7" : 9223372036854775807,
+    "BB1E3FBE498DCEEFA4B42D083CD04A9CF86A286E" : 9223372036854775807,
     "65743DC1944BFD568C77478CAF58834FC23391B7" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A327F288-82F0-44B6-80FF-7763833D57E5",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "7B8D85F13EDBE5BFDA885F7E1DFF3B9B20D004F7" : "..",
+    "BB1E3FBE498DCEEFA4B42D083CD04A9CF86A286E" : "react-native-libvr\/libvr\/",
     "65743DC1944BFD568C77478CAF58834FC23391B7" : "react-native-libvr\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "RNVRPlayer",
@@ -25,6 +27,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sqvcnet\/react-native-libvr-demo.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7B8D85F13EDBE5BFDA885F7E1DFF3B9B20D004F7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sqvcnet\/libvr.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BB1E3FBE498DCEEFA4B42D083CD04A9CF86A286E"
     }
   ]
 }

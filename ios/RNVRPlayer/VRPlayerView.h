@@ -9,16 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
 
-#import "GVRCardboardView.h"
-#import "GVRHeadTransform.h"
-
-#import "RCTBridge.h"
-#import "RCTEventDispatcher.h"
-#import "UIView+React.h"
+#import <React/RCTBridge.h>
 
 #include "Renderer.h"
 
-@interface VRPlayerView : GVRCardboardView<GVRCardboardViewDelegate>
+@interface VRPlayerView : GLKView<GLKViewDelegate>
 - (instancetype)init:(RCTBridge *)bridge;
 - (void)open:(NSString *)uri;
 - (void)seek:(double)seek;

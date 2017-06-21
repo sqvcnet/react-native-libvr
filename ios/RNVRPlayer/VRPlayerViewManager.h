@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Views/RCTViewManager.h"
+
+#import <React/RCTViewManager.h>
 
 @interface VRPlayerViewManager : RCTViewManager <RCTBridgeModule>
 

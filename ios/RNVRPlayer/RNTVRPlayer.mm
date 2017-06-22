@@ -265,6 +265,8 @@
 {
 //    GLKMatrix4 head_from_start_matrix = [headTransform headPoseInStartSpace];
 //    _renderer->render(head_from_start_matrix.m);
+    GLKMatrix4 head_from_start_matrix;
+    _renderer->render(head_from_start_matrix.m);
 }
 
 @end

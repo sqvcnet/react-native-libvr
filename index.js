@@ -1,10 +1,18 @@
 'use strict';
 import {PropTypes, Component} from 'react';
-import {requireNativeComponent} from 'react-native';
+import ReactNative, {NativeModules, requireNativeComponent} from 'react-native';
+
+var VRPlayerViewManager = NativeModules.VRPlayerViewManager;
 
 class VRPlayerView extends Component {
+    open() {
+        VRPlayerViewManager.open(ReactNative.findNodeHandle(this), (error, result) => {
+            return;
+        });
+    }
+
     render() {
-        return <VRPlayerViewManager {...this.props} />;
+        return (<RNVRPlayerView {...this.props} />);
     }
 }
 
@@ -23,7 +31,7 @@ VRPlayerView
 }
 ;
 
-var VRPlayerViewManager = requireNativeComponent('VRPlayerViewManager', VRPlayerView, {
+var RNVRPlayerView = requireNativeComponent('VRPlayerViewManager', VRPlayerView, {
     nativeOnly: {
         'onLayout': true,
         'scaleX': true,

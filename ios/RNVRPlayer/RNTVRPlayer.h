@@ -1,5 +1,5 @@
 //
-//  VRPlayerView.h
+//  RNTVRPlayer.h
 //  RNVRPlayer
 //
 //  Created by 单强 on 2017/6/20.
@@ -13,8 +13,9 @@
 
 #include "Renderer.h"
 
-@interface VRPlayerView : GLKView<GLKViewDelegate>
+@interface RNTVRPlayer : GLKView<GLKViewDelegate>
 - (instancetype)init:(RCTBridge *)bridge;
+- (void)setURI:(NSString *)uri;
 - (void)open:(NSString *)uri;
 - (void)seek:(double)seek;
 - (void)play:(BOOL)playOrPause;

@@ -1,5 +1,5 @@
 //
-//  VRPlayerViewManager.h
+//  RNTVRPlayerManager.h
 //  RNVRPlayer
 //
 //  Created by 单强 on 2017/06/20.
@@ -10,6 +10,6 @@
 
 #import <React/RCTViewManager.h>
 
-@interface VRPlayerViewManager : RCTViewManager <RCTBridgeModule>
+@interface RNTVRPlayerManager : RCTViewManager <RCTBridgeModule>
 
 @end

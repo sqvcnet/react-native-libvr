@@ -1,5 +1,5 @@
 //
-//  VRPlayerView.mm
+//  RNTVRPlayer.mm
 //  RNVRPlayer
 //
 //  Created by 单强 on 2017/6/20.
@@ -7,14 +7,14 @@
 //
 
 
-#import "VRPlayerView.h"
+#import "RNTVRPlayer.h"
 #include "Player.hpp"
 #import <VideoToolbox/VideoToolbox.h>
 
 #import <React/RCTEventDispatcher.h>
 #import <React/UIView+React.h>
 
-@implementation VRPlayerView {
+@implementation RNTVRPlayer {
     geeek::Player *_player;
     Renderer *_renderer;
     RCTBridge *_bridge;
@@ -23,11 +23,6 @@
     NSThread *_renderThread;
     CADisplayLink *_displayLink;
     bool _needPlay;
-}
-
-- (void)customMethod
-{
-    return;
 }
 
 - (instancetype)init:(RCTBridge *)bridge
@@ -127,14 +122,18 @@
     NSLog(@"applicationWillEnterForeground in player view");
 }
 
+- (void)setURI:(NSString *)uri {
+    _uri = uri;
+}
+
 - (void)open:(NSString *)uri {
-    if ([uri isEqualToString:@""]) {
+    if (!uri || [uri isEqualToString:@""]) {
         return;
     }
 
     _uri = uri;
     
-    _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render)];
+    _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
     [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     //    _renderThread = [[NSThread alloc] initWithTarget:self
     //                                            selector:@selector(threadMain)
@@ -147,7 +146,7 @@
                                             userInfo:nil
                                              repeats:YES];
     
-    _player->open([uri UTF8String]);
+    _player->open([_uri UTF8String]);
     
     if (_needPlay) {
         _player->play();
@@ -256,6 +255,10 @@
     _renderer->init(width, height);
     
     [super reactSetFrame: frame];
+}
+
+- (void)render:(CADisplayLink*)displayLink {
+    [self display];
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect

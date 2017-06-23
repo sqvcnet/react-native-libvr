@@ -18,14 +18,14 @@
 - (void)setURI:(NSString *)uri;
 - (void)open:(NSString *)uri;
 - (void)seek:(double)seek;
-- (void)play:(BOOL)playOrPause;
-- (void)close:(BOOL)isClose;
+- (void)play:(BOOL)isPlay;
+- (void)close;
 - (void)setMode:(int)mode;
 - (void)setCodec:(int)codec;
 - (void)setResolution:(int)resolution;
 - (void)setRotateDegree:(int)degree;
 - (void)setViewPortDegree:(int)degree;
-- (void)pauseRenderer:(BOOL)isPause;
+- (void)playRenderer:(BOOL)isPlay;
 
 - (void)customMethod;
 

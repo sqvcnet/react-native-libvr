@@ -36,7 +36,7 @@ typedef void (^ResponseViewBlock)(RNTVRPlayer *view);
     }];
 }
 
-RCT_EXPORT_METHOD(setMode:(nonnull NSNumber *)reactTag mode:(NSNumber *)mode callback:(RCTResponseSenderBlock)callback) {
+RCT_EXPORT_METHOD(setMode:(nonnull NSNumber *)reactTag mode:(nonnull NSNumber *)mode callback:(RCTResponseSenderBlock)callback) {
     [self getView:reactTag callback:^(RNTVRPlayer *view) {
         if (!view) {
             NSArray *error = [[NSArray alloc] initWithObjects:@"Invalid view returned from registry", nil];
@@ -48,7 +48,7 @@ RCT_EXPORT_METHOD(setMode:(nonnull NSNumber *)reactTag mode:(NSNumber *)mode cal
     } ];
 }
 
-RCT_EXPORT_METHOD(setCodec:(nonnull NSNumber *)reactTag codec:(NSNumber *)codec callback:(RCTResponseSenderBlock)callback) {
+RCT_EXPORT_METHOD(setCodec:(nonnull NSNumber *)reactTag codec:(nonnull NSNumber *)codec callback:(RCTResponseSenderBlock)callback) {
     [self getView:reactTag callback:^(RNTVRPlayer *view) {
         if (!view) {
             NSArray *error = [[NSArray alloc] initWithObjects:@"Invalid view returned from registry", nil];
@@ -68,6 +68,18 @@ RCT_EXPORT_METHOD(open:(nonnull NSNumber *)reactTag uri:(NSString *)uri callback
             return;
         }
         [view open:uri];
+        callback([[NSArray alloc] initWithObjects:@"", nil]);
+    } ];
+}
+
+RCT_EXPORT_METHOD(seek:(nonnull NSNumber *)reactTag pos:(nonnull NSNumber *)pos callback:(RCTResponseSenderBlock)callback) {
+    [self getView:reactTag callback:^(RNTVRPlayer *view) {
+        if (!view) {
+            NSArray *error = [[NSArray alloc] initWithObjects:@"Invalid view returned from registry", nil];
+            callback(error);
+            return;
+        }
+        [view seek:[pos doubleValue]];
         callback([[NSArray alloc] initWithObjects:@"", nil]);
     } ];
 }
@@ -95,6 +107,41 @@ RCT_EXPORT_METHOD(pause:(nonnull NSNumber *)reactTag callback:(RCTResponseSender
         callback([[NSArray alloc] initWithObjects:@"", nil]);
     } ];
 }
+RCT_EXPORT_METHOD(playRenderer:(nonnull NSNumber *)reactTag callback:(RCTResponseSenderBlock)callback) {
+    [self getView:reactTag callback:^(RNTVRPlayer *view) {
+        if (!view) {
+            NSArray *error = [[NSArray alloc] initWithObjects:@"Invalid view returned from registry", nil];
+            callback(error);
+            return;
+        }
+        [view playRenderer:YES];
+        callback([[NSArray alloc] initWithObjects:@"", nil]);
+    } ];
+}
+
+RCT_EXPORT_METHOD(pauseRenderer:(nonnull NSNumber *)reactTag callback:(RCTResponseSenderBlock)callback) {
+    [self getView:reactTag callback:^(RNTVRPlayer *view) {
+        if (!view) {
+            NSArray *error = [[NSArray alloc] initWithObjects:@"Invalid view returned from registry", nil];
+            callback(error);
+            return;
+        }
+        [view playRenderer:NO];
+        callback([[NSArray alloc] initWithObjects:@"", nil]);
+    } ];
+}
+
+RCT_EXPORT_METHOD(close:(nonnull NSNumber *)reactTag callback:(RCTResponseSenderBlock)callback) {
+    [self getView:reactTag callback:^(RNTVRPlayer *view) {
+        if (!view) {
+            NSArray *error = [[NSArray alloc] initWithObjects:@"Invalid view returned from registry", nil];
+            callback(error);
+            return;
+        }
+        [view close];
+        callback([[NSArray alloc] initWithObjects:@"", nil]);
+    } ];
+}
 
 RCT_CUSTOM_VIEW_PROPERTY(src, String, RNTVRPlayer)
 {
@@ -110,13 +157,6 @@ RCT_CUSTOM_VIEW_PROPERTY(play, BOOL, RNTVRPlayer)
     return;
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(pauseRenderer, BOOL, RNTVRPlayer)
-{
-    BOOL isPauseRenderer = [RCTConvert BOOL:json];
-    [view pauseRenderer:isPauseRenderer];
-    return;
-}
-
 RCT_CUSTOM_VIEW_PROPERTY(codec, int, RNTVRPlayer)
 {
     int codec = [RCTConvert int:json];
@@ -127,7 +167,7 @@ RCT_CUSTOM_VIEW_PROPERTY(codec, int, RNTVRPlayer)
 RCT_CUSTOM_VIEW_PROPERTY(close, BOOL, RNTVRPlayer)
 {
     BOOL isClose = [RCTConvert BOOL:json];
-    [view close:isClose];
+    [view close];
     return;
 }
 

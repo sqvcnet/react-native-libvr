@@ -22,7 +22,6 @@
     NSTimer *_timer;
     NSThread *_renderThread;
     CADisplayLink *_displayLink;
-    bool _needPlay;
 }
 
 - (instancetype)init:(RCTBridge *)bridge
@@ -102,7 +101,7 @@
 
 - (void) onAppGoBack{
     _player->pause();
-    [self pauseRenderer:true];
+    [self playRenderer:false];
     NSDictionary *event = @{
                             @"target": self.reactTag,
                             @"message": @"onPause"
@@ -147,10 +146,6 @@
                                              repeats:YES];
     
     _player->open([_uri UTF8String]);
-    
-    if (_needPlay) {
-        _player->play();
-    }
 }
 
 - (void)updateProgress {
@@ -167,12 +162,16 @@
     [_bridge.eventDispatcher sendInputEventWithName:@"topChange" body:event];
 }
 
-- (void)play:(BOOL)playOrPause {
-    if (_player == nullptr) {
-        _needPlay = playOrPause;
+- (void)play:(BOOL)isPlay {
+    if (nullptr == _player) {
+        NSException *e = [NSException
+                          exceptionWithName:@"please open firstly"
+                          reason:@"_player is nullptr"
+                          userInfo:nil];
+        @throw e;
         return;
     }
-    if (playOrPause) {
+    if (isPlay) {
         _player->play();
     } else {
         _player->pause();
@@ -183,17 +182,12 @@
     _player->setCodec(codec);
 }
 
-- (void)close:(BOOL)isClose {
-    if (isClose) {
-//        [self play:false];
-        [_timer invalidate];
-        _player->close();
-//        [self pauseRenderer:true];
-        
-        //这里必须invalidate，否则_displayLink 隐式hold住self导致self不能被gc, dealloc的断点不会进入，_displayLink和self都不会被释放！！！
-        [_displayLink invalidate];
-        //    [_renderThread cancel];
-    }
+- (void)close {
+    [_timer invalidate];
+    _player->close();
+
+    //这里必须invalidate，否则_displayLink 隐式hold住self导致self不能被gc, dealloc的断点不会进入，_displayLink和self都不会被释放！！！
+    [_displayLink invalidate];
 }
 
 - (void)seek:(double)seek {
@@ -232,8 +226,8 @@
     _player->getRenderer()->setViewPortDegree(degree);
 }
 
-- (void)pauseRenderer:(BOOL)isPause {
-    _displayLink.paused = isPause;
+- (void)playRenderer:(BOOL)isPlay {
+    _displayLink.paused = isPlay;
 }
 
 - (void)reactSetFrame:(CGRect)frame

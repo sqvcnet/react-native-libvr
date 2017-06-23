@@ -32,6 +32,12 @@ class VRPlayer extends React.Component {
         });
     }
 
+    seek(pos, cb) {
+        RNTVRPlayerManager.seek(ReactNative.findNodeHandle(this.refs.native), pos, (error, result) => {
+            cb ? cb() : null;
+        });
+    }
+
     play(cb) {
         RNTVRPlayerManager.play(ReactNative.findNodeHandle(this.refs.native), (error, result) => {
             cb ? cb() : null;
@@ -44,9 +50,27 @@ class VRPlayer extends React.Component {
         });
     }
 
+    playRenderer(cb) {
+        RNTVRPlayerManager.playRenderer(ReactNative.findNodeHandle(this.refs.native), (error, result) => {
+            cb ? cb() : null;
+        });
+    }
+
+    pauseRenderer(cb) {
+        RNTVRPlayerManager.pauseRenderer(ReactNative.findNodeHandle(this.refs.native), (error, result) => {
+            cb ? cb() : null;
+        });
+    }
+
+    close(cb) {
+        RNTVRPlayerManager.close(ReactNative.findNodeHandle(this.refs.native), (error, result) => {
+            cb ? cb() : null;
+        });
+    }
+
+    static MODE_3D = 0;
     static MODE_360 = 1;
     static MODE_360_UP_DOWN = 2;
-    static MODE_3D = 0;
     static MODE_3D_LEFT_RIGHT = 3;
     static MODE_360_SINGLE = 4;
     setMode(mode, cb) {
@@ -55,21 +79,19 @@ class VRPlayer extends React.Component {
         });
     }
 
+    static CODEC_SOFT = 0;
+    static CODEC_HARD = 1;
     setCodec(codec, cb) {
         RNTVRPlayerManager.setCodec(ReactNative.findNodeHandle(this.refs.native), codec, (error, result) => {
             cb ? cb() : null;
         });
     }
 
-    getResolution() {
-
-    }
-
     _onChange(event: Event) {
         if (!this.props.onChange) {
             return;
         }
-        // this.props.onChange(event.nativeEvent);
+        this.props.onChange(event.nativeEvent);
     }
 
     render() {

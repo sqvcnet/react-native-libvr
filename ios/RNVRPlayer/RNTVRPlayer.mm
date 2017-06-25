@@ -216,7 +216,26 @@
     }
     Renderer::Mode tmp = static_cast<Renderer::Mode>(_mode);
     _player->getRenderer()->setMode(tmp);
-    [self saveCost];
+    switch (tmp) {
+        case Renderer::Mode::MODE_3D:
+            [[RNTSensor inst] stop];
+            break;
+        case Renderer::Mode::MODE_360:
+            [[RNTSensor inst] start];
+            break;
+        case Renderer::Mode::MODE_360_UP_DOWN:
+            [[RNTSensor inst] start];
+            break;
+        case Renderer::Mode::MODE_3D_LEFT_RIGHT:
+            [[RNTSensor inst] stop];
+            break;
+        case Renderer::Mode::MODE_360_SINGLE:
+            [[RNTSensor inst] start];
+            break;
+        default:
+            [[RNTSensor inst] start];
+            break;
+    }
 }
 
 - (void)setRotateDegree:(int)degree {

@@ -16,7 +16,8 @@
 @interface RNTVRPlayer : GLKView<GLKViewDelegate>
 - (instancetype)init:(RCTBridge *)bridge;
 - (void)setURI:(NSString *)uri;
-- (void)open:(NSString *)uri;
+typedef void(^CallbackBlock)(NSString *err);
+- (void)open:(NSString *)uri callback:(CallbackBlock)callback;
 - (void)seek:(double)seek;
 - (void)play:(BOOL)isPlay;
 - (void)close;

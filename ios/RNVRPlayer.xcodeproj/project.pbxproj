@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B00BA291EFA53EA001C5DD9 /* liblibvr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF91A2A1EF977E10065F7CF /* liblibvr.a */; };
+		0B98C5481EFD10750095364F /* RNTSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B98C5471EFD10750095364F /* RNTSensor.m */; };
 		0BF91A201EF972D70065F7CF /* RNTVRPlayerManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0BF91A1D1EF972D70065F7CF /* RNTVRPlayerManager.mm */; };
 		0BF91A211EF972D70065F7CF /* RNTVRPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0BF91A1F1EF972D70065F7CF /* RNTVRPlayer.mm */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,8 @@
 		0B00BA5A1EFA6297001C5DD9 /* libCardboardSDK_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCardboardSDK_arm64.a; path = RNVRPlayer/third_party/GVRSDK/prebuilt/ios/libCardboardSDK_arm64.a; sourceTree = "<group>"; };
 		0B00BA661EFA675E001C5DD9 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		0B00BA681EFA68D6001C5DD9 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
+		0B98C5461EFD10750095364F /* RNTSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTSensor.h; sourceTree = "<group>"; };
+		0B98C5471EFD10750095364F /* RNTSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTSensor.m; sourceTree = "<group>"; };
 		0BF91A0A1EF970C30065F7CF /* libRNVRPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNVRPlayer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF91A1C1EF972D70065F7CF /* RNTVRPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTVRPlayerManager.h; sourceTree = "<group>"; };
 		0BF91A1D1EF972D70065F7CF /* RNTVRPlayerManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RNTVRPlayerManager.mm; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 		0BF91A0C1EF970C30065F7CF /* RNVRPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				0B98C5461EFD10750095364F /* RNTSensor.h */,
+				0B98C5471EFD10750095364F /* RNTSensor.m */,
 				0BF91A1C1EF972D70065F7CF /* RNTVRPlayerManager.h */,
 				0BF91A1D1EF972D70065F7CF /* RNTVRPlayerManager.mm */,
 				0BF91A1E1EF972D70065F7CF /* RNTVRPlayer.h */,
@@ -194,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B98C5481EFD10750095364F /* RNTSensor.m in Sources */,
 				0BF91A211EF972D70065F7CF /* RNTVRPlayer.mm in Sources */,
 				0BF91A201EF972D70065F7CF /* RNTVRPlayerManager.mm in Sources */,
 			);

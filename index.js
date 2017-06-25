@@ -7,19 +7,6 @@ var RNTVRPlayerManager = NativeModules.RNTVRPlayerManager;
 var VRPlayerNative = requireNativeComponent('RNTVRPlayer', VRPlayer);
 
 class VRPlayer extends React.Component {
-    static propTypes = {
-        src: PropTypes.string,
-        play: PropTypes.bool,
-        pauseRenderer: PropTypes.bool,
-        codec: PropTypes.number,
-        close: PropTypes.bool,
-        seek: PropTypes.number,
-        mode: PropTypes.number,
-        rotateDegree: PropTypes.number,
-        degree: PropTypes.number,
-        onChange: PropTypes.func,
-    };
-
     constructor(props) {
         super(props);
         this.props = props;
@@ -27,8 +14,8 @@ class VRPlayer extends React.Component {
 
     open(uri, cb) {
         var tag = ReactNative.findNodeHandle(this.refs.native);
-        RNTVRPlayerManager.open(tag, uri, (error, result) => {
-            cb ? cb() : null;
+        RNTVRPlayerManager.open(tag, uri, (err) => {
+            cb ? cb(err) : null;
         });
     }
 
@@ -50,17 +37,17 @@ class VRPlayer extends React.Component {
         });
     }
 
-    playRenderer(cb) {
-        RNTVRPlayerManager.playRenderer(ReactNative.findNodeHandle(this.refs.native), (error, result) => {
-            cb ? cb() : null;
-        });
-    }
-
-    pauseRenderer(cb) {
-        RNTVRPlayerManager.pauseRenderer(ReactNative.findNodeHandle(this.refs.native), (error, result) => {
-            cb ? cb() : null;
-        });
-    }
+    // playRenderer(cb) {
+    //     RNTVRPlayerManager.playRenderer(ReactNative.findNodeHandle(this.refs.native), (error, result) => {
+    //         cb ? cb() : null;
+    //     });
+    // }
+    //
+    // pauseRenderer(cb) {
+    //     RNTVRPlayerManager.pauseRenderer(ReactNative.findNodeHandle(this.refs.native), (error, result) => {
+    //         cb ? cb() : null;
+    //     });
+    // }
 
     close(cb) {
         RNTVRPlayerManager.close(ReactNative.findNodeHandle(this.refs.native), (error, result) => {
@@ -83,6 +70,18 @@ class VRPlayer extends React.Component {
     static CODEC_HARD = 1;
     setCodec(codec, cb) {
         RNTVRPlayerManager.setCodec(ReactNative.findNodeHandle(this.refs.native), codec, (error, result) => {
+            cb ? cb() : null;
+        });
+    }
+
+    setDegree(degree, cb) {
+        RNTVRPlayerManager.setDegree(ReactNative.findNodeHandle(this.refs.native), degree, (error, result) => {
+            cb ? cb() : null;
+        });
+    }
+
+    setRotateDegree(degree, cb) {
+        RNTVRPlayerManager.setRotateDegree(ReactNative.findNodeHandle(this.refs.native), degree, (error, result) => {
             cb ? cb() : null;
         });
     }

@@ -11,5 +11,6 @@
 #### Add node_modules/react-native-libvr/ios/RNVRPlayer.xcodeproj to your Xcode project, usually under the Libraries group
 #### on your project's "Build Phrases" add libRNVRPlayer.a in "Link Binary with Libraries"
 
-**** See https://github.com/sqvcnet/react-native-libvr-demo for detailed usages
+##
+#### See https://github.com/sqvcnet/react-native-libvr-demo for detailed usages
 

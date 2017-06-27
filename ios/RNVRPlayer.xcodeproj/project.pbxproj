@@ -7,25 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B00BA291EFA53EA001C5DD9 /* liblibvr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF91A2A1EF977E10065F7CF /* liblibvr.a */; };
-		0B98C5481EFD10750095364F /* RNTSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B98C5471EFD10750095364F /* RNTSensor.m */; };
-		0BF91A201EF972D70065F7CF /* RNTVRPlayerManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0BF91A1D1EF972D70065F7CF /* RNTVRPlayerManager.mm */; };
-		0BF91A211EF972D70065F7CF /* RNTVRPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0BF91A1F1EF972D70065F7CF /* RNTVRPlayer.mm */; };
+		0B90D8FE1F022AEC00093D69 /* RNTVRPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B90D8FD1F022AEC00093D69 /* RNTVRPlayer.m */; };
+		0B90D8FF1F02369000093D69 /* liblibvr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B90D8A91F02141D00093D69 /* liblibvr.a */; };
+		0BF91A201EF972D70065F7CF /* RNTVRPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF91A1D1EF972D70065F7CF /* RNTVRPlayerManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0B00BA271EFA5252001C5DD9 /* PBXContainerItemProxy */ = {
+		0B90D8A81F02141D00093D69 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0BF91A241EF977E00065F7CF /* libvr.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0B00BA111EFA4F9E001C5DD9;
-			remoteInfo = vr;
-		};
-		0BF91A291EF977E10065F7CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0BF91A241EF977E00065F7CF /* libvr.xcodeproj */;
+			containerPortal = 0B90D8A41F02141D00093D69 /* libvr.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 0B2E4E4C1EB7332A0063163B;
+			remoteGlobalIDString = 0B00BA121EFA4F9E001C5DD9;
 			remoteInfo = libvr;
 		};
 /* End PBXContainerItemProxy section */
@@ -43,17 +35,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0B00BA5A1EFA6297001C5DD9 /* libCardboardSDK_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCardboardSDK_arm64.a; path = RNVRPlayer/third_party/GVRSDK/prebuilt/ios/libCardboardSDK_arm64.a; sourceTree = "<group>"; };
-		0B00BA661EFA675E001C5DD9 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
-		0B00BA681EFA68D6001C5DD9 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
-		0B98C5461EFD10750095364F /* RNTSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTSensor.h; sourceTree = "<group>"; };
-		0B98C5471EFD10750095364F /* RNTSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTSensor.m; sourceTree = "<group>"; };
+		0B90D8A41F02141D00093D69 /* libvr.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libvr.xcodeproj; path = ../libvr/ios/libvr.xcodeproj; sourceTree = "<group>"; };
+		0B90D8FC1F022AEC00093D69 /* RNTVRPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTVRPlayer.h; sourceTree = "<group>"; };
+		0B90D8FD1F022AEC00093D69 /* RNTVRPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTVRPlayer.m; sourceTree = "<group>"; };
 		0BF91A0A1EF970C30065F7CF /* libRNVRPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNVRPlayer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF91A1C1EF972D70065F7CF /* RNTVRPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTVRPlayerManager.h; sourceTree = "<group>"; };
-		0BF91A1D1EF972D70065F7CF /* RNTVRPlayerManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RNTVRPlayerManager.mm; sourceTree = "<group>"; };
-		0BF91A1E1EF972D70065F7CF /* RNTVRPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTVRPlayer.h; sourceTree = "<group>"; };
-		0BF91A1F1EF972D70065F7CF /* RNTVRPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RNTVRPlayer.mm; sourceTree = "<group>"; };
-		0BF91A241EF977E00065F7CF /* libvr.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libvr.xcodeproj; path = ../libvr/libvr.xcodeproj; sourceTree = "<group>"; };
+		0BF91A1D1EF972D70065F7CF /* RNTVRPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTVRPlayerManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B00BA291EFA53EA001C5DD9 /* liblibvr.a in Frameworks */,
+				0B90D8FF1F02369000093D69 /* liblibvr.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,11 +58,16 @@
 		0B00BA591EFA6297001C5DD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0B00BA681EFA68D6001C5DD9 /* libz.1.dylib */,
-				0B00BA661EFA675E001C5DD9 /* VideoToolbox.framework */,
-				0B00BA5A1EFA6297001C5DD9 /* libCardboardSDK_arm64.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0B90D8A51F02141D00093D69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0B90D8A91F02141D00093D69 /* liblibvr.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		0BF91A011EF970C30065F7CF = {
@@ -99,12 +91,10 @@
 		0BF91A0C1EF970C30065F7CF /* RNVRPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				0B98C5461EFD10750095364F /* RNTSensor.h */,
-				0B98C5471EFD10750095364F /* RNTSensor.m */,
 				0BF91A1C1EF972D70065F7CF /* RNTVRPlayerManager.h */,
-				0BF91A1D1EF972D70065F7CF /* RNTVRPlayerManager.mm */,
-				0BF91A1E1EF972D70065F7CF /* RNTVRPlayer.h */,
-				0BF91A1F1EF972D70065F7CF /* RNTVRPlayer.mm */,
+				0BF91A1D1EF972D70065F7CF /* RNTVRPlayerManager.m */,
+				0B90D8FC1F022AEC00093D69 /* RNTVRPlayer.h */,
+				0B90D8FD1F022AEC00093D69 /* RNTVRPlayer.m */,
 			);
 			path = RNVRPlayer;
 			sourceTree = "<group>";
@@ -112,17 +102,9 @@
 		0BF91A231EF977C90065F7CF /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				0BF91A241EF977E00065F7CF /* libvr.xcodeproj */,
+				0B90D8A41F02141D00093D69 /* libvr.xcodeproj */,
 			);
 			name = Libraries;
-			sourceTree = "<group>";
-		};
-		0BF91A251EF977E00065F7CF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0BF91A2A1EF977E10065F7CF /* liblibvr.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +121,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0B00BA281EFA5252001C5DD9 /* PBXTargetDependency */,
 			);
 			name = RNVRPlayer;
 			productName = RNVRPlayer;
@@ -173,8 +154,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 0BF91A251EF977E00065F7CF /* Products */;
-					ProjectRef = 0BF91A241EF977E00065F7CF /* libvr.xcodeproj */;
+					ProductGroup = 0B90D8A51F02141D00093D69 /* Products */;
+					ProjectRef = 0B90D8A41F02141D00093D69 /* libvr.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -185,11 +166,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		0BF91A2A1EF977E10065F7CF /* liblibvr.a */ = {
+		0B90D8A91F02141D00093D69 /* liblibvr.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = liblibvr.a;
-			remoteRef = 0BF91A291EF977E10065F7CF /* PBXContainerItemProxy */;
+			remoteRef = 0B90D8A81F02141D00093D69 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -199,21 +180,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B98C5481EFD10750095364F /* RNTSensor.m in Sources */,
-				0BF91A211EF972D70065F7CF /* RNTVRPlayer.mm in Sources */,
-				0BF91A201EF972D70065F7CF /* RNTVRPlayerManager.mm in Sources */,
+				0BF91A201EF972D70065F7CF /* RNTVRPlayerManager.m in Sources */,
+				0B90D8FE1F022AEC00093D69 /* RNTVRPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0B00BA281EFA5252001C5DD9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = vr;
-			targetProxy = 0B00BA271EFA5252001C5DD9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0BF91A111EF970C30065F7CF /* Debug */ = {
@@ -315,13 +287,8 @@
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
 				);
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/RNVRPlayer/third_party/GVRSDK/include/ios",
-					"$(SRCROOT)/../libvr/libvr/modules",
-					"$(SRCROOT)/../libvr/libvr/third_party/glm",
-					"$(SRCROOT)/../libvr/libvr/third_party/ffmpeg/include/ios",
-				);
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/RNVRPlayer/third_party/GVRSDK/prebuilt/ios";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../libvr/ios/libvr";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -332,13 +299,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_BITCODE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/RNVRPlayer/third_party/GVRSDK/include/ios",
-					"$(SRCROOT)/../libvr/libvr/modules",
-					"$(SRCROOT)/../libvr/libvr/third_party/glm",
-					"$(SRCROOT)/../libvr/libvr/third_party/ffmpeg/include/ios",
-				);
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/RNVRPlayer/third_party/GVRSDK/prebuilt/ios";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../libvr/ios/libvr";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

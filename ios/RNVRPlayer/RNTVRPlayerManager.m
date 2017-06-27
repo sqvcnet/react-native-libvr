@@ -11,6 +11,9 @@
 
 #import <React/RCTUIManager.h>
 
+#import <React/RCTEventDispatcher.h>
+#import <React/UIView+React.h>
+
 @implementation RNTVRPlayerManager {
 }
 
@@ -101,17 +104,6 @@ RCT_EXPORT_METHOD(play:(nonnull NSNumber *)reactTag callback:(RCTResponseSenderB
 RCT_EXPORT_METHOD(pause:(nonnull NSNumber *)reactTag callback:(RCTResponseSenderBlock)callback) {
     [self redirectToView:reactTag exec:^(RNTVRPlayer *view) {
         [view play:NO];
-    } callback:callback];
-}
-RCT_EXPORT_METHOD(playRenderer:(nonnull NSNumber *)reactTag callback:(RCTResponseSenderBlock)callback) {
-    [self redirectToView:reactTag exec:^(RNTVRPlayer *view) {
-        [view playRenderer:YES];
-    } callback:callback];
-}
-
-RCT_EXPORT_METHOD(pauseRenderer:(nonnull NSNumber *)reactTag callback:(RCTResponseSenderBlock)callback) {
-    [self redirectToView:reactTag exec:^(RNTVRPlayer *view) {
-        [view playRenderer:NO];
     } callback:callback];
 }
 

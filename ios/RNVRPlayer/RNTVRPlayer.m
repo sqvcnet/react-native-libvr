@@ -43,21 +43,7 @@
 
 - (void)reactSetFrame:(CGRect)frame
 {
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    CGRect screenNativeBounds = [[UIScreen mainScreen] nativeBounds];
-    int width = screenNativeBounds.size.width;
-    int height = screenNativeBounds.size.height;
-    if (screenBounds.size.width > screenBounds.size.height) {
-        int tmp = width;
-        width = height;
-        height = tmp;
-    }
-    double wScale = width / screenBounds.size.width;
-    double hScale = height / screenBounds.size.height;
-    width = 1.0 * frame.size.width * wScale;
-    height = 1.0 * frame.size.height * hScale;
-    
-    [super initRenderer:width height:height];
+    [super initRenderer:frame.size.width height:frame.size.height];
     [super reactSetFrame: frame];
 }
 
